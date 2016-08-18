@@ -1,13 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Comments from './Comments.jsx';
+import Cells from './Cells.jsx';
 
 class App extends React.Component {
   render () {
     return (
       <div>
         <p> Hello Mito!</p>
-        <Comments />
+        <Cells />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
+import { Button } from 'react-bootstrap';
 import _ from 'lodash'
-class Comments extends Component {
+class Cells extends Component {
 
   constructor(props) {
       super(props);
@@ -18,8 +19,8 @@ class Comments extends Component {
       <div className="row column">
         {children.map(comment =>
           <div key={comment.id} className="row column">
-            <button>{comment.content}</button>
-            {comment.children && <Comments children={comment.children}/>}
+            <Button>{comment.content}</Button>
+            {comment.children && <Cells children={comment.children}/>}
           </div>
         )}
       </div>
@@ -29,11 +30,11 @@ class Comments extends Component {
 
 }
 
-Comments.propTypes = {
+Cells.propTypes = {
   children: PropTypes.array.isRequired
 }
 
-Comments.defaultProps = {
+Cells.defaultProps = {
   children: [{
     id: 1,
     content: 'level 0',
@@ -50,4 +51,4 @@ Comments.defaultProps = {
 }]
 }
 
-export default Comments
+export default Cells
